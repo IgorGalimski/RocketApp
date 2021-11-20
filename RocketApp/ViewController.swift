@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController
 {
     @IBOutlet weak var spaceShipImage: UIImageView!
     @IBOutlet weak var mainButton: UIButton!
+    
+    var avPlayer: AVAudioPlayer?
     
     var currentSpaceShipStatus: SpaceShipStatus = .Ready
     
@@ -19,6 +22,28 @@ class ViewController: UIViewController
         super.viewDidLoad()
         
         SetLanchButtonAppearance()
+        InitAudioPlayer()
+    }
+    
+    func InitAudioPlayer()
+    {
+        guard let backgroundAudioTrack = Bundle.main.url(forResource: "spaceBackground",
+                                                         withExtension: "wav")
+        else
+        {
+            return
+        }
+        
+        do
+        {
+            avPlayer = try AVAudioPlayer(contentsOf: backgroundAudioTrack)
+            avPlayer?.play()
+            avPlayer?.volume = 0.2
+        }
+        catch
+        {
+            
+        }
     }
     
     func SetLanchButtonAppearance()
