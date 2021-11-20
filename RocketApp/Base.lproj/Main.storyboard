@@ -46,6 +46,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="lanchButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0RN-hr-f22"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -68,6 +71,10 @@
                             <constraint firstItem="ddg-AD-YyQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z1s-RY-nVR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainButton" destination="IKL-80-oPw" id="CzP-vw-d3y"/>
+                        <outlet property="spaceShipImage" destination="eVD-fQ-8VB" id="JY0-91-oqk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
